@@ -1,1 +1,5 @@
-
+<h1>Welcome, <%=@user.username%>!</h1>
+<h3>You have commented on the following posts:</h3>
+<% @user.comments.each do |comment| %>
+    <%= link_to comment.post.title, post_path(comment.post) %>
+<% end %>
